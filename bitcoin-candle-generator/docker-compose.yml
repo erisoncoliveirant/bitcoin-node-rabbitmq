@@ -1,0 +1,23 @@
+version: "3.2"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: 'rabbitmq'
+    environment:
+      - RABBITMQ_DEFAULT_USER=rabbitmq
+      - RABBITMQ_DEFAULT_PASS=rabbitmq
+    restart: always
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - /docker_conf/rabbitmq/data/:/var/lib/rabbitmq/
+    networks:
+        - rabbitmq_go_net
+
+networks:
+  rabbitmq_go_net:
+    driver: bridge
+volumes:
+  logs-folder:
+    name: ${log_rabbitmq_management}
