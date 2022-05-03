@@ -1,4 +1,4 @@
-import Candle from "@/models/Candles"
+import Candle from "@/models/Candle"
 import axios from "axios"
 import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators"
 

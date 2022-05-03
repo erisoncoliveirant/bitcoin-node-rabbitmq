@@ -1,9 +1,14 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import store from './store'
-import VueApexChats from 'vue3-apexcharts'
+import VueApexCharts from 'vue3-apexcharts'
+import { loadFonts } from './plugins/webfontloader'
+import vuetify from './plugins/vuetify'
+
+loadFonts()
 
 createApp(App)
   .use(store)
-  .use(VueApexChats)
+  .use(VueApexCharts)
+  .use(vuetify)
   .mount('#app')
